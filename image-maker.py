@@ -8,16 +8,18 @@ def convert_to_gray(img):
     return gray
 
 def sharpener(img):
-    F1 =  np.array([[ 0, -1,  0],
-                    [-1, +5, -1],
-                    [ 0, -1,  0]])
+    F1 = np.array([[ 0, -1,  0],
+                   [-1, +5, -1],
+                   [ 0, -1,  0]])
     sharp = cv2.filter2D(img, -1, F1)
-    return sharp
+    sharpened = cv2.cvtColor(sharp, cv2.COLOR_BGR2RGB)
+    return sharpened
 
 def blurer(img):
-    F2 = np.ones((3, 3)) / 9
+    F2 = np.ones((5, 5)) / 25
     blur = cv2.filter2D(img, -1, F2)
-    return blur
+    blured = cv2.cvtColor(blur, cv2.COLOR_BGR2RGB)
+    return blured
 
 
 st.title('Image Processor')
@@ -41,9 +43,3 @@ if image is not None:
     if st.button('Blur the Image'):
         blured_img = blurer(img)
         st.image(blured_img, use_column_width= True)
-
-
-
-
- 
-
