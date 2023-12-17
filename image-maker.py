@@ -22,7 +22,7 @@ def blurer(img):
     return blured
 
 
-st.title('مدل پردازش تصویر')
+st.title('<p style="font-family:iranyekan; color:Blue; font-size: 30px;">مدل پردازش تصویر</p>')
 
 image = st.file_uploader('عکستُ آپلود کن', type=['png', 'jpg', 'jpeg'])
 if image is not None:
