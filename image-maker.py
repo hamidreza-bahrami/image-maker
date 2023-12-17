@@ -25,7 +25,7 @@ def blurer(img):
 st.title('مدل پردازش تصویر')
 st.subheader('عکس موردنظرت رو آپلود کن')
 
-image = st.file_uploader(type=['png', 'jpg', 'jpeg'])
+image = st.file_uploader('آپلود تصویر', type=['png', 'jpg', 'jpeg'])
 if image is not None:
     file_bytes = np.array(bytearray(image.read()), dtype= np.uint8)
     img = cv2.imdecode(file_bytes, 1)
