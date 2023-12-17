@@ -21,9 +21,9 @@ def blurer(img):
     blured = cv2.cvtColor(blur, cv2.COLOR_BGR2RGB)
     return blured
 
-col1, col2, col3 = st.columns(([1,1,1]))
-col2.st.title('مدل پردازش تصویر')
-col2.st.subheader('عکس موردنظرت رو آپلود کن')
+
+st.title('مدل پردازش تصویر')
+st.subheader('عکس موردنظرت رو آپلود کن')
 
 image = st.file_uploader('آپلود تصویر', type=['png', 'jpg', 'jpeg'])
 if image is not None:
