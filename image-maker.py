@@ -22,24 +22,23 @@ def blurer(img):
     return blured
 
 
-st.title('Image Processor')
-st.header('Upload Your Image And I will Do Some Magic')
+st.title('مدل پردازش تصویر')
 
-image = st.file_uploader('Upload Your Image', type=['png', 'jpg', 'jpeg'])
+image = st.file_uploader('عکستُ آپلود کن', type=['png', 'jpg', 'jpeg'])
 if image is not None:
     file_bytes = np.array(bytearray(image.read()), dtype= np.uint8)
     img = cv2.imdecode(file_bytes, 1)
 
     st.image(img, channels= 'BGR', use_column_width= True)
 
-    if st.button('Convert To Gray'):
+    if st.button('خاکستری کن'):
         img_gray = convert_to_gray(img)
         st.image(img_gray, use_column_width= True)
 
-    if st.button('Sharpen the Image'):
+    if st.button('شارپ کن'):
         sharp_img = sharpener(img)
         st.image(sharp_img, use_column_width= True)
 
-    if st.button('Blur the Image'):
+    if st.button('محو کن'):
         blured_img = blurer(img)
         st.image(blured_img, use_column_width= True)
