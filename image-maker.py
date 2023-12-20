@@ -22,8 +22,8 @@ def blurer(img):
     return blured
 
 
-st.title('مدل پردازش تصویر')
-st.subheader('عکس موردنظرت رو آپلود کن')
+st.write("<h1 style='text-align: center; color: blue;'>مدل پردازش تصویر</h1>", unsafe_allow_html=True)
+st.write("<h2 style='text-align: center; color: gray;'>تصویر خود را وارد کنید</h2>", unsafe_allow_html=True)
 
 image = st.file_uploader('آپلود تصویر', type=['png', 'jpg', 'jpeg'])
 if image is not None:
