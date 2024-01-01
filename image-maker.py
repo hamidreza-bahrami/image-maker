@@ -24,7 +24,8 @@ def blurer(img):
 
 st.write("<h1 style='text-align: center; color: blue;'>مدل پردازش تصویر</h1>", unsafe_allow_html=True)
 st.write("<h2 style='text-align: center; color: gray;'>تصویر خود را وارد کنید</h2>", unsafe_allow_html=True)
-st.write("<h4 style='text-align: center; color: gray;'>RoboAi طراحی شده توسط</h4>", unsafe_allow_html=True)
+st.write("<h4 style='text-align: center; color: gray;'>Robo-Ai.ir طراحی شده توسط</h4>", unsafe_allow_html=True)
+st.link_button("Robo-Ai بازگشت به", "https://robo-ai.ir")
 
 image = st.file_uploader('آپلود تصویر', type=['png', 'jpg', 'jpeg'])
 if image is not None:
