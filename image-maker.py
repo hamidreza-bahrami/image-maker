@@ -35,13 +35,25 @@ if image is not None:
     st.image(img, channels= 'BGR', use_column_width= True)
 
     if st.button('خاکستری کن'):
-        img_gray = convert_to_gray(img)
-        st.image(img_gray, use_column_width= True)
+        with st.chat_message("assistant"):
+                with st.spinner('''درحال انجام، لطفا صبور باشید'''):
+                    time.sleep(3)
+                    st.success(u'\u2713''انجام شد')
+                    img_gray = convert_to_gray(img)
+                    st.image(img_gray, use_column_width= True)
 
     if st.button('شارپ کن'):
-        sharp_img = sharpener(img)
-        st.image(sharp_img, use_column_width= True)
+        with st.chat_message("assistant"):
+                with st.spinner('''درحال انجام، لطفا صبور باشید'''):
+                    time.sleep(3)
+                    st.success(u'\u2713''انجام شد')
+                    sharp_img = sharpener(img)
+                    st.image(sharp_img, use_column_width= True)
 
     if st.button('محو کن'):
-        blured_img = blurer(img)
-        st.image(blured_img, use_column_width= True)
+        with st.chat_message("assistant"):
+                with st.spinner('''درحال انجام، لطفا صبور باشید'''):
+                    time.sleep(3)
+                    st.success(u'\u2713''انجام شد')
+                    blured_img = blurer(img)
+                    st.image(blured_img, use_column_width= True)
