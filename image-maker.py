@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image 
 import numpy as np
 import cv2
+import time
 
 def convert_to_gray(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
