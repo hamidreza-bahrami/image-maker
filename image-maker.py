@@ -57,7 +57,8 @@ def bright(img):
 
 def detail(img):
     dst = cv2.detailEnhance(img, sigma_s=10, sigma_r=0.15)
-    return dst
+    new_dst = cv2.cvtColor(dst, cv2.COLOR_RGB2BGR)
+    return new_dst
     
 def draw(img):
     drawing1, drawing2 = cv2.pencilSketch(img, sigma_s=50, sigma_r=0.07, shade_factor=0.05)
