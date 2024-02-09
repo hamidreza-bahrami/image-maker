@@ -2,3 +2,5 @@ numpy==1.26.2
 opencv_contrib_python==4.8.1.78
 Pillow==9.4.0
 streamlit==1.29.0
+rembg==2.0.54
+ColorThief==0.2.1
