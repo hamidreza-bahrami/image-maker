@@ -5,6 +5,8 @@ import numpy as np
 import cv2
 import time
 import random
+from rembg import remove
+from colorthief import ColorThief
 
 def convert_to_gray(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -140,6 +142,25 @@ if image is not None:
                     st.success(u'\u2713''انجام شد')
                     new_img = draw(img)
                     st.image(new_img, use_column_width= True)
+                    
+    if st.button('پس زمینه رو پاک کن'):
+        gaga = Image.open(image)
+        fixed = remove(gaga)
+        with st.chat_message("assistant"):
+                with st.spinner('''درحال انجام، لطفا صبور باشید'''):
+                    time.sleep(3)
+                    st.success(u'\u2713''انجام شد')
+                    st.image(fixed, use_column_width= True)
+
+    if st.button('رنگ غالب رو آنالیز کن'):
+        ct = ColorThief(image)
+        pallette = ct.get_color(quality=1)
+        with st.chat_message("assistant"):
+            with st.spinner('''درحال انجام، لطفا صبور باشید'''):
+                time.sleep(3)
+                st.success(u'\u2713''انجام شد')
+                st.write("<h5 style='text-align: right; color: gray;'>رنگ غالب این تصویر</h5>", unsafe_allow_html=True)
+                st.subheader(pallette)
     
     if st.button("پاکسازی حافظه"):
         st.cache_data.clear()
